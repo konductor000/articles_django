@@ -10,15 +10,26 @@
 
 <hr>
 
+{% if latest_comments_list %}
+	
+	{% for c in latest_comments_list %}
+		<p>
+			<strong>{{c.author_name}}</strong>
+			<p>{{c.comment_text}}</p>
+		</p>
+	{% endfor %}
 
+{% else %}
+НЕт комментариев
+{% endif %}
 
 <hr>
 
-<form action="{% url 'articles:leave_comment' article.id" method="POST"></form>
+<form action="{% url 'articles:leave_comment' article.id %}" method="POST"></form>
 
 	{% csrf_token %}
 
-	<input type="text" name="Вфше имя" name="name"><br>
+	<input type="text" placeholder="Ваше имя" name="name"><br>
 	<textarea name="text" required="" placeholder="Текст комментария" cols="30" rows="10"></textarea><br>
 
 	<button type="submit">Оставить комментарий</button>
