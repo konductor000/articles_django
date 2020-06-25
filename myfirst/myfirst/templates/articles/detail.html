@@ -4,7 +4,24 @@
 
 {% block content %}
 
+<h2>{{article.article_title}}</h2>
+<p>{{article.article_text}}</p>
+<em>{{article.pub_date}}</em>
 
+<hr>
+
+
+
+<hr>
+
+<form action="{% url 'articles:leave_comment' article.id" method="POST"></form>
+
+	{% csrf_token %}
+
+	<input type="text" name="Вфше имя" name="name"><br>
+	<textarea name="text" required="" placeholder="Текст комментария" cols="30" rows="10"></textarea><br>
+
+	<button type="submit">Оставить комментарий</button>
 
 {% endblock %}
 
