@@ -17,12 +17,9 @@ def detail(request, article_id):
 	return render(request, 'articles/detail.html', {'article' : a, 'latest_comments_list' : latest_comments_list})
 
 def leave_comment(request, article_id):
-	print('article_id', article_id)
 	try:
 		a = Article.objects.get( id = article_id )
 	except:
 		raise Http404("Статья не найдена")
-	print('name', request.POST['name'])
-	print('text', request.POST['text'])
 	a.comment_set.create(author_name = request.POST['name'], comment_text = request.POST['text'])
 	return HttpResponseRedirect( reverse('articles:detail', args = (a.id,)) )
