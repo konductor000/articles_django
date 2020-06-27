@@ -8,6 +8,14 @@
 <p>{{article.article_text}}</p>
 <em>{{article.pub_date}}</em>
 
+
+
+
+{% if article.article_image %}
+	<img src="{{ MEDIA_URL }}{{ article.article_image.url }}">
+{% endif %}
+
+
 <hr>
 
 {% if latest_comments_list %}
