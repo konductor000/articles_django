@@ -9,10 +9,10 @@
 <em>{{article.pub_date}}</em>
 
 
-
-
 {% if article.article_image %}
-	<img src="{{ MEDIA_URL }}{{ article.article_image.url }}">
+	<p>
+		<img src="{{ MEDIA_URL }}{{ article.article_image.url }}" width="600" height="411" align='center'>
+	</p>
 {% endif %}
 
 

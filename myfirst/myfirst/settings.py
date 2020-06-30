@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'bot.apps.BotConfig',
     'grappelli',
     'articles.apps.ArticlesConfig',
     'django.contrib.admin',

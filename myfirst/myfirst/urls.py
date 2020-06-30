@@ -20,8 +20,10 @@ from django.conf.urls.static import static
 
 urlpatterns = [
 	path('articles/', include('articles.urls')),
+	path('bot/', include('bot.urls')),
     path('admin/', admin.site.urls),
     path('grappelli/', include('grappelli.urls')), # grappelli URLS
+
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

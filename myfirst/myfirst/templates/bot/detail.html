@@ -1,0 +1,30 @@
+{% block content %}
+
+<hr>
+
+<p>{{hello_world}}</p>
+
+<hr>
+
+<form>
+
+	{% csrf_token %}
+
+	<button type="submit">Eat</button>
+	<button type="submit">Go to the hospital</button>
+	<button type="submit">Go to the shop</button>
+	<button type="submit">Go to the work</button>
+	<button type="submit">Sleep</button>
+
+</form>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
