@@ -6,22 +6,60 @@
 
 <hr>
 
-<form>
+<form action="{% url 'bot:Eat' %}" method="POST">
+
+	{% csrf_token %}
+	<button type="submit">Eat</button>
+	
+
+</form>
+
+<form action="{% url 'bot:GoToTheHospital' %}" method="POST">
 
 	{% csrf_token %}
 
-	<button type="submit">Eat</button>
-	<button type="submit">Go to the hospital</button>
-	<button type="submit">Go to the shop</button>
-	<button type="submit">Go to the work</button>
+	<button type="submit">GoToTheHospital</button>
+	
+
+</form>
+
+<form action="{% url 'bot:GoToTheShop' %}" method="POST">
+
+	{% csrf_token %}
+
+	<button type="submit">GoToTheShop</button>
+	
+
+</form>
+
+<form action="{% url 'bot:GoToTheWork' %}" method="POST">
+
+	{% csrf_token %}
+
+	<button type="submit">GoToTheWork</button>
+	
+
+</form>
+
+<form action="{% url 'bot:Sleep' %}" method="POST">
+
+	{% csrf_token %}
+
 	<button type="submit">Sleep</button>
+	
+
+</form>
+
+<form action="{% url 'bot:ReturnAll' %}" method="POST">
+
+	{% csrf_token %}
+
+	<button type="submit">ReturnAll</button>
+	
 
 </form>
 
 {% endblock %}
-
-
-
 
 
 
